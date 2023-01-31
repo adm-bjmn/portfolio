@@ -16,11 +16,12 @@
 
 </head>
 <body>
-
-<div class = theme_selector> 
-  <div class = 'themes'>
-    <div id = 'lightmode' class = 'themes_button'> </div>
-    <div id = 'darkmode' class = 'themes_button'> </div>
+<div class = 'header_home'>
+  <div class = theme_selector> 
+    <div class = 'themes'>
+      <div id = 'lightmode' class = 'themes_button'> </div>
+      <div id = 'darkmode' class = 'themes_button'> </div>
+    </div>
   </div>
 </div>
 <div style="width: 95%; margin: 0 auto;" class = 'outer_border'>
@@ -31,9 +32,12 @@
         <h1>Adm.Bjmn</h1>
       </div>
       <div class = 'line1'> 
-        <h3>Process driven, creative software engineer with </h3>
-        <h3 style = ' padding-left: 20px;'>a focus on intutive and pragmatic managment tools that are useful, </h3>
-        <h3 style = ' padding-left: 50px;'>not faffy.</h3>
+        <h3>Process driven, creative software engineer with a</h3>
+        <h3 style = ' padding-left: 20px;'>focus on minimalistic, well thought out managment tools</h3>
+        <h3 style = ' padding-left: 50px;'>that are conveinient, free from faff and genuinly useful.</h3>
+        <h3 style = ' padding-left: 50px;'></h3>
+        <br>
+
       </div>
       <div style = 'height: 5em;'></div>
     </div>
@@ -42,86 +46,102 @@
   <section class = style>
     <div class = 'body-container'>
       <div class = 'about-wrapper'>
-        <div class ='about_me'>
-          <h2> About </h2>
+        <div class = 'about_title'> <h2> About </h2></div>
+        <div class = 'about_content'>
           <p> this is a paragraph</p>
           <p> this is another paragraph</p>
-          <hr>
-          <h2> Top Expertise</h2>
           <p> Djagno web developer with 10 years oas management experience
-         <a target = "_blank" href="{% static '/images/resume.pdf' %}">DOwnload Resume</a></p>
-          <div id = 'skills'>
-            <ul>
-              <li> one</li>
-              <li> one</li>
-              <li> one</li>
-              <li> one</li>
-            </ul>
-            <ul>
-              <li> one</li>
-              <li> one</li>
-              <li> one</li>
-              <li> one</li>
-            </ul>
-          </div>
+          <a target = "_blank" href="{% static '/images/resume.pdf' %}">DOwnload Resume</a></p>
         </div>
-      <div class = 'social-links'>
-        <img id = 'social_pic' src= "{% static 'images/image.JPEG' %}">
-      </div>
-
+         
+        <div id = 'skills'>
+          <ul>
+            <li><img id = 'django' src= "{% static 'media/django.png' %}"></li>
+            <li><img id = 'python' src= "{% static 'media/python.png' %}"></li>
+            <li><img id = 'sql' src= "{% static 'media/sql.png' %}"></li>
+            <li><img id = 'html' src= "{% static 'media/html.png' %}"></li>
+            <li><img id = 'html' src= "{% static 'media/css.png' %}"></li>
+            <li><img id = 'html' src= "{% static 'media/js.png' %}"></li>
+            <li><img id = 'git' src= "{% static 'media/git.png' %}"></li>
+            <li><img id = 'docker' src= "{% static 'media/docker.png' %}"></li>
+          </ul>
+        </div>
     </div>
   </section>
 
   <section class = style>
     <div class = 'body-container'>
-      <div><h1>Examples of work</h1></div>
+      <div><h2>Examples of work</h2></div>
       <div class = 'examples_wrapper'>
-
         <div>
-          <div class = 'post' id = 'post1'>
-            <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
-            <div class = 'post-text'>
-              <h3>Management tools</h3>
-              <p> post intro </p>
-              <a href ='#'>View project</a>
+          <div class = 'post_wrapper'>
+            <div class = 'project_title'><h1>01</h1><h3>Management tools</h3></div>
+            <div class = 'project_button'><a id = 'project_button'href ='#'>View project</a></div>
+          </div>
+          <div class = 'hide'>
+            <div class = 'post' id = 'post1'>
+              <p> this is a post intro, its a series of words that are going to explain
+                how the porgram works and what was involvedi nmaking it, it willgive 
+                onllokes a onverview of what its goin to be be like ti use tha 
+                software and also an insite into the problem it solves.
+              </p>
+              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
             </div>
           </div>
         </div>
 
         <div>
-          <div class = 'post' id = 'post2'>
-            <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
-            <div class = 'post-text'>
-              <h3>Web Applications</h3>
-              <p> post intro </p>
-              <a href ='#'>View project</a>
+          <div class = 'post_wrapper'>
+            <div class = 'project_title'><h1>02</h1><h3>Web apps</h3></div>
+            <div class = 'project_button'><a id = 'project_button'href ='#'>View project</a></div>
+          </div>
+          <div class = 'hide'>
+            <div class = 'post' id = 'post1'>
+              <p> this is a post intro, its a series of words that are going to explain
+                how the porgram works and what was involvedi nmaking it, it willgive 
+                onllokes a onverview of what its goin to be be like ti use tha 
+                software and also an insite into the problem it solves.
+              </p>
+              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
             </div>
           </div>
         </div>
 
         <div>
-          <div class = 'post' id = 'post3'>
-            <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
-            <div class = 'post-text'>
-              <h3>Python 
-                proficiency</h3>
-              <p> post intro </p>
-              <a href ='#'>View project</a>
+          <div class = 'post_wrapper'>
+            <div class = 'project_title'><h1>03</h1><h3>Python Proficiency</h3></div>
+            <div class = 'project_button'><a id = 'project_button'href ='#'>View project</a></div>
+          </div>
+          <div class = 'hide'>
+            <div class = 'post' id = 'post1'>
+              <p> this is a post intro, its a series of words that are going to explain
+                how the porgram works and what was involvedi nmaking it, it willgive 
+                onllokes a onverview of what its goin to be be like ti use tha 
+                software and also an insite into the problem it solves.
+              </p>
+              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
             </div>
           </div>
         </div>
 
         <div>
-          <div class = 'post' id = 'post4'>
-            <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
-            <div class = 'post-text'>
-              <h3>Data Science</h3>
-              <p> post intro </p>
-              <a href ='#'>View project</a>
+          <div class = 'post_wrapper'>
+            <div class = 'project_title'><h1>04</h1><h3>Data work</h3></div>
+            <div class = 'project_button'><a id = 'project_button'href ='#'>View project</a></div>
+          </div>
+          <div class = 'hide'>
+            <div class = 'post' id = 'post1'>
+              <p> this is a post intro, its a series of words that are going to explain
+                how the porgram works and what was involvedi nmaking it, it willgive 
+                onllokes a onverview of what its goin to be be like ti use tha 
+                software and also an insite into the problem it solves.
+              </p>
+              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
             </div>
           </div>
         </div>
-  
+
+
       </div>
     </div>
   </section>
@@ -131,7 +151,7 @@
   <section>
     <div class = 'body-container'>
       <div class = 'contact'> 
-        <h1>Contact</h1>
+        <a href="{% url 'contact' %}"a><h1>Contact</h1></a>
       </div>
     </div>
   </section>
