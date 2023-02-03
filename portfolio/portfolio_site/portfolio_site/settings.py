@@ -129,3 +129,37 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Email Setting
+# Dev
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+# EMAIL_USEW_SSL = False
+
+# Prod
+'''
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'adm.bjmn@gmail.com'
+EMAIL_HOST_PASSWORD = 'env'
+EMAIL_USE_TLS = True
+# EMAIL_USEW_SSL = False
+
+
+myaccount.goog.com/lesssecureapps
+myaccount.goog.com/DisplayUnlockCaptcha
+turn on.
+
+OR // 
+
+turn on two factor auth.
+myaccount.google.com/apppasswords
+
+
+Always Check ports - google django send gmail.
+'''
+

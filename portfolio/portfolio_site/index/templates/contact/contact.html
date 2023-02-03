@@ -10,8 +10,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Creepster&family=Sofia+Sans+Extra+Condensed:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
+
   <link href = "{% static 'css/main.css'%}" rel = "stylesheet" text = "text/css">
-  <title>A Meaningful Page Title</title>
+
+  <link id ='theme_style' href = '' rel = "stylesheet" text = "text/css">
+
+
+  <title>Contact</title>
   <meta name="author" content="John Doe">
 
 </head>
@@ -24,8 +29,8 @@
 
   <div class = theme_selector> 
     <div class = 'themes'>
-      <div id = 'lightmode' class = 'themes_button'> </div>
-      <div id = 'darkmode' class = 'themes_button'> </div>
+      <div data-mode = "light" id = 'lightmode' class = 'themes_button'> </div>
+      <div data-mode = "dark" id = 'darkmode' class = 'themes_button'> </div>
     </div>
   </div>
 </div>
@@ -33,7 +38,11 @@
 
   <section>
     <div class = 'main-container'>
+      {% if name %}
+        <h3 class = 'contact_message'>Thanks so much {{ name }}! I'll be in touch! Kowabunga!</h3>
+      {% else %}
       <div class = 'contact_wrapper'>
+        <!-- if post request = get -->
         <div class = 'form_wrapper'>
             <form action="{% url 'contact' %}" method="post" id= "contact-form">
               {% csrf_token %}
@@ -50,9 +59,10 @@
           <h4> This form is linked straight to my email 
               inbox so please feel free to leave as detailed 
               a message as you feel necessary and I will get 
-              back to you as soon as possible! Cheers
-              'ave a good one! </h4>
+              back to you as soon as possible!
+              </h4>
         </div>
+      {% endif %}
 
       </div>
     </div>
@@ -63,6 +73,7 @@
   <p> Copywrite Adam Benjamin Bastow</p>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script type = "text/javascript" src  = "{% static 'js/script.js'%}"></script>"
 </body>
 </html>
 
