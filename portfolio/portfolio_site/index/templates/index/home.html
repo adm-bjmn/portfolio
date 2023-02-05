@@ -1,47 +1,16 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Creepster&family=Sofia+Sans+Extra+Condensed:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
-
-  <link href = "{% static 'css/main.css'%}" rel = "stylesheet" text = "text/css">
-
-
-  <link id = "theme_style" href = "" rel = "stylesheet" text = "text/css">
-
-
-  <title>A Meaningful Page Title</title>
-  <meta name="author" content="John Doe">
-
-</head>
-<body>
-<div class = 'header_home'>
-  <div class = theme_selector> 
-    <div class = 'themes'>
-      <div data-mode = "light" id = 'lightmode' class = 'themes_button'> </div>
-      <div data-mode = "dark" id = 'darkmode' class = 'themes_button'> </div>
-    </div>
-  </div>
-</div>
-<div style="width: 95%; margin: 0 auto;" class = 'outer_border'>
-
+{% block content %}
   <section class = style>
     <div class = 'top-container'>
       <div class = 'title'> 
-        <h1>Adm.Bjmn</h1>
+        <h1 class = "dark:font-dark">Adm.Bjmn</h1>
       </div>
       <div class = 'line1'> 
-        <h3>Process driven, creative software engineer with a</h3>
-        <h3 style = ' padding-left: 20px;'>focus on minimalistic, useful and </h3>
-        <h3 style = ' padding-left: 50px;'>thoughtful experiences.</h3>
-        <h3 style = ' padding-left: 50px;'></h3>
+        <h4 >Process driven, creative software engineer with a</h4>
+        <h4 style = ' padding-left: 20px;'>focus on minimalistic, useful and </h4>
+        <h4 style = ' padding-left: 50px;'>thoughtful experiences.</h4>
+        <h4 style = ' padding-left: 50px;'></h4>
         <br>
 
       </div>
@@ -60,15 +29,23 @@
           <a target = "_blank" href="{% static '/images/resume.pdf' %}">DOwnload Resume</a></p>
         </div>
          
-        <div id = 'skills'>
+        <div class = 'skills'>
           <ul>
             <li><img id = 'django' src= "{% static 'media/django.png' %}"></li>
+            {% if is_dark_theme %}
+            <li><img id = 'python' src= "{% static 'media/python_white.png' %}"></li>
+            {% else %}
             <li><img id = 'python' src= "{% static 'media/python.png' %}"></li>
+            {% endif %}
             <li><img id = 'sql' src= "{% static 'media/sql.png' %}"></li>
             <li><img id = 'html' src= "{% static 'media/html.png' %}"></li>
             <li><img id = 'html' src= "{% static 'media/css.png' %}"></li>
             <li><img id = 'tail' src= "{% static 'media/tailwind.png' %}"></li>
+            {% if is_dark_theme %}
+            <li><img id = 'git' src= "{% static 'media/git_white.png' %}"></li>
+            {% else %}
             <li><img id = 'git' src= "{% static 'media/git.png' %}"></li>
+            {% endif %}
             <li><img id = 'docker' src= "{% static 'media/docker.png' %}"></li>
           </ul>
         </div>
@@ -82,34 +59,32 @@
 
         <div>
           <div class = 'post_wrapper'>
-            <div class = 'project_title'><h1>02</h1><h3>Web apps</h3></div>
-            <div class = 'project_button'><a id = 'project_button'href ="{% url 'web_apps' %}">View project</a></div>
+            <div class = 'project_title'><h1>01</h1>
+              <h4>Web apps</h4></div>
+              <div class = 'project_button_wrapper'><a class = 'project_button dark:text-black'' href ="{% url 'data_work' %}">View project</a></div>
           </div>
           <div class = 'hide'>
-            <div class = 'post' id = 'post1'>
-              <p> this is a post intro, its a series of words that are going to explain
-                how the porgram works and what was involvedi nmaking it, it willgive 
-                onllokes a onverview of what its goin to be be like ti use tha 
-                software and also an insite into the problem it solves.
-              </p>
-              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
+            <div class = 'post_PT'>
+              <p> text </p>
+            </div>
+            <div class = 'Tn'>
+              <img class = 'thumnail' src= "{% static 'media/image.JPEG' %}">
             </div>
           </div>
         </div>
 
         <div>
           <div class = 'post_wrapper'>
-            <div class = 'project_title'><h1>01</h1><h3>Business tools</h3></div>
-            <div class = 'project_button'><a id = 'project_button'href ="{% url 'tools' %}">View project</a></div>
+            <div class = 'project_title'><h1>02</h1>
+              <h4>Business tools</h4></div>
+              <div class = 'project_button_wrapper'><a class = 'project_button dark:text-black'' href ="{% url 'data_work' %}">View project</a></div>
           </div>
           <div class = 'hide'>
-            <div class = 'post' id = 'post1'>
-              <p> this is a post intro, its a series of words that are going to explain
-                how the porgram works and what was involvedi nmaking it, it willgive 
-                onllokes a onverview of what its goin to be be like ti use tha 
-                software and also an insite into the problem it solves.
-              </p>
-              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
+            <div class = 'post_PT'>
+              <p> text </p>
+            </div>
+            <div class = 'Tn'>
+              <img class = 'thumnail' src= "{% static 'media/image.JPEG' %}">
             </div>
           </div>
         </div>
@@ -117,52 +92,51 @@
 
         <div>
           <div class = 'post_wrapper'>
-            <div class = 'project_title'><h1>03</h1><h3>Python Proficiency</h3></div>
-            <div class = 'project_button'><a id = 'project_button'href = "{% url 'python_pro' %}">View project</a></div>
+            <div class = 'project_title'><h1>03</h1>
+            <h4>Python Proficiency</h4></div>
+            <div class = 'project_button_wrapper'><a class = 'project_button dark:text-black'' href ="{% url 'data_work' %}">View project</a></div>
           </div>
           <div class = 'hide'>
-            <div class = 'post' id = 'post1'>
+            <div class = 'post_PT'>
               <p> More suited to potential collaborators or anyone looking to hire me as a 
                 software engineer this section demonstrates my general house keeping and good 
                 code etiquette. From these basic python projects you will see my ability to write clean 
                 and maintainable code that sticks strictly to the PEP 8 guidelines and 
-                maintains tidy and understandable logic throughout. The examples used
-                are complete products that operate inside the console. While they might be pretty 
-                common place apps and won't necessarily get your idea juices flowing, 
-                they serve a purpose very well in demonstrating my proficiency with object oriented
-                programming and the use of python classes, dictionaries, functions and external
-                sources of information. 
-                Should you wish to play with
-                these projects they have been containerised using docker and instructions 
-                can be found in the repos on my GitHub linked in the about section above.
-              </p>
-              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
+                maintains tidy and understandable logic throughout.
+                Should you wish to play with these projects they have been containerised using 
+                docker and instructions can be found in the repos on my GitHub which will be linked in the view project page.
+                </p>
+            </div>
+            <div class = 'Tn'>
+              <img class = 'thumnail' src= "{% static 'media/image.JPEG' %}">
             </div>
           </div>
         </div>
 
         <div>
           <div class = 'post_wrapper'>
-            <div class = 'project_title'><h1>04</h1><h3>Data work</h3></div>
-            <div class = 'project_button'><a id = 'project_button'href ="{% url 'data_work' %}">View project</a></div>
+            <div class = 'project_title'><h1>04</h1>
+              <h4>Data work</h4></div>
+            <div class = 'project_button_wrapper'><a class = 'project_button dark:text-black'' href ="{% url 'data_work' %}">View project</a></div>
           </div>
           <div class = 'hide'>
-            <div class = 'post' id = 'post1'>
-              <p> I could sit here all day and tell you about the work I've done with such and such a data set 
-                and what wonderful dexcoveries I made,
-                however it would be as challenging for you to fain interest as it would for me to try and make it 
-                sound interesting to someone with no prior relationship with whichever data set I may 
-                be trying to dismantle before your very eyes.
-                And so I think it might suffice to just explain that I have a spent a great many hour inside 
-                the Jupiter notebooks platform, honing my data wrangling skills and improving my 
-                data spring cleaning in order to be able to make high quality visualisation and use 
-                machine learning algorithms to take a deep dive into data an in pursuit of improved 
+            <div class = 'post_PT'>
+              <p>  Much like every other 'data scientist' out there, I could quite easiliy go on about the work I've done with such and such a data set 
+                and what wonderful descoveries I have made, but no matter which data set I may dismantle before your very eyes, 
+                it wouldn't stand to mean much when every person on the planet has access to the eextact same training data on Kaggle.com.
+                It might suffice to say then that I have a spent a great many hours inside 
+                the Jupiter notebooks platform learning how to develop the necessary skills for real world use, 
+                honing my data wrangling skills in order to imporove my own apps while improving my 
+                data cleaning, making high quality visualisation and making use of
+                machine learning algorithms to take a deep dive into data in pursuit of improved 
                 understanding and insights into trends and relationships.
                 Click the view project button to the right for more information and a few example 
                 visualisations to help justify this claim and demonstrate my proficiency with Pandas 
                 and other libraries such as Seaborn, SciPy, MatPlotLib and skLearn. 
               </p>
-              <img class = 'thumnail' src= "{% static 'images/image.JPEG' %}">
+            </div>
+            <div class = 'Tn'>
+              <img class = 'thumnail' src= "{% static 'media/image.JPEG' %}">
             </div>
           </div>
         </div>
@@ -177,7 +151,7 @@
   <section>
     <div class = 'body-container'>
       <div class = 'contact'> 
-        <a href="{% url 'contact' %}"a><h1>Contact</h1></a>
+        <a href="{% url 'contact' %}"a><h1 class = "font-title text-[#333333]">Connect</h1></a>
       </div>
     </div>
   </section>
@@ -189,7 +163,8 @@
   <p> Copywrite Adam Benjamin Bastow</p>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content %}
+
+
 
 
