@@ -17,28 +17,27 @@
 
 /* HTML standard tags */
 html, body{
-    background-color: var(--main_color);
     padding: 0;
     margin: 0;
     justify-content: center;
 }
 
-h1{font-size: 300px;}
-h2{font-size: 200px;}
-h3{font-size: 100px;}
-h4{font-size: 80px;}
-h5{font-size: 20px;}
-h6{font-size: 16px;}
+h1{font-size: 377px;}
+h2{font-size: 233px;}
+h3{font-size: 144px;}
+h4{font-size: 89px;}
+h5{font-size: 55px;}
+h6{font-size: 34px;}
 h1,h2,h3,h4,h5,h6, strong{
-    color: var(--main_text_color);
     font-family: var(--main_font);
+    color: var(--main_text_color);
     font-weight: 500;
 }
 
 p,li,span,label,input,textarea{
     color: var(--sub_text_color);
     font-family: var(--sub_font);
-    font-size: 30px;
+    font-size: 34px;
 }
 
 a{
@@ -55,15 +54,21 @@ li{
 
 
 /* themes */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+}
+
 .theme_selector{
     display: flex;
+    flex-direction: row;
     justify-content: right;
+    align-items: center;
 }
-.header_home{
-        display: flex;
-        justify-content: right;
-        margin-right: 50px;
-    }
 
 .themes_button{
     height: 20px;
@@ -74,15 +79,18 @@ li{
     display: inline-block;
     cursor: pointer;
 }
+.theme_link{
+    padding-top: 8px;
+}
 .themes_button:hover{
     border-width: 3px;
 }
 
 #lightmode{
-    background-color: #f6f5e5;
+    background-color: var(--dark_button);
 }
 #darkmode{
-    background-color: var(--dark_button);
+    background-color: black;
 }
 
 /* border */
@@ -91,17 +99,8 @@ li{
     border-radius: 10px;
 }
 
-
 /* main_block */
 
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
-    margin: 0 auto;
-}
 .style{
     border-bottom: 1px solid var(--border_color);
     overflow: auto;
@@ -134,7 +133,7 @@ li{
 .about_content{
     padding-top: 30px;
 }
-#skills{
+.skills{
     padding-top: 30px;
     display: flex;
     justify-content: space-evenly;
@@ -205,38 +204,44 @@ li{
     display: flex;
     flex-direction: row;
 }
-.project_button{
+.project_button_wrapper{
     padding-top: 30px;
 }
 
-#project_button{
+.project_button{
     border: 1px solid var(--border_color);
     border-radius: 15px;
     padding: 10px;
     background-color: var(--border_color);
     color: var(--main_color);
-}
-.thumnail{
-    display: block;
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+    
 }
 
 .hide{
     display: none;
     width: 100%;
+    gap: 30px;
 }
   
 .post_wrapper:hover + .hide {
     display: flex;
+
 }
 
-.post{
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    gap: 30px;
+.post_PT{
+    width: 61.8%;
+}
+
+.Tn{
+    width: 38.2%;
+}
+.thumnail{
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border: 1px solid var(--border_color);
+    border-radius: 10px;
 }
 
 .contact{
@@ -269,15 +274,14 @@ li{
 
 }
 .form_wrapper{
-    justify-content: left;
+    padding-top: 50px;
 }
-#contact-form{
+.contact-form{
     display: block;
     grid-area: form;
     max-width: 600px;
     padding: 10px;
     margin: 0 auto;
-    border: 1px solid var(--boarder_color);
     background-color: var(--main_color);
     margin-bottom: 50px;
     border-radius: 5px;
@@ -289,21 +293,21 @@ li{
     padding-bottom: 10px;
     background-color: var(--alternate_color);
     border-radius: 5px;
-    border: 1px solid var(--boarder_color);
+
     font-size: 35px;
 }
 
-#contact-form label{
+.contact-form label{
     line-height: 2.7em;
     font-family: var(--main_font);
     font-size: 35px;
 }
 
-#contact-form textarea{
+.contact-form textarea{
     min-height: 300px;
     font-size: 35px;
 }
-#submit-button{
+.submit-button{
     margin-top: 10px;
     width: 100%;
     padding-top: 10px;
@@ -345,16 +349,21 @@ li{
         justify-content: center;
     }
 } 
-  
 
 @media screen and (max-width: 1000px) {
-    h1{font-size: 150px;}
-    h2{font-size: 100px;}
-    h3{font-size: 80px;}
-    h4{font-size: 60px;}
-    h5{font-size: 40px;}
-    h6{font-size: 20px;}
-    p{font-size: 20px;}
+    .skills li{
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    h1{font-size: 144px;}
+    h2{font-size: 89px;}
+    h3{font-size: 55px;}
+    h4{font-size: 34px;}
+    h5{font-size: 21px;}
+    h6{font-size: 13px;}
+    p{font-size: 13px;}
 
     .post_wrapper{
         display: flex;
@@ -362,8 +371,15 @@ li{
         padding-bottom: 50px;
 
     }
+    .post_PT{
+        width: 100%;
+    }
+    .Tn{
+        width: 100%;
+    }
     .hide{
         display: flex;
+        flex-direction: column;
     }
     .about-wrapper{
         display: flex;
@@ -372,7 +388,5 @@ li{
     .about_content{
         padding-top: 5px;
     }
-    #skills li{
-        display: inline;
-    }
+    
 }

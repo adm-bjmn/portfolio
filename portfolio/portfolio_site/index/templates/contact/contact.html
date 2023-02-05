@@ -1,40 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Creepster&family=Sofia+Sans+Extra+Condensed:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
-
-  <link href = "{% static 'css/main.css'%}" rel = "stylesheet" text = "text/css">
-
-  <link id ='theme_style' href = '' rel = "stylesheet" text = "text/css">
-
-
-  <title>Contact</title>
-  <meta name="author" content="John Doe">
-
-</head>
+{% block content %}
 <body>
-
-<div class = 'header'>
-  <div class = 'home_button'> 
-    <a href="{% url 'home' %}"a><h5>Home</h5></a>
-  </div>
-
-  <div class = theme_selector> 
-    <div class = 'themes'>
-      <div data-mode = "light" id = 'lightmode' class = 'themes_button'> </div>
-      <div data-mode = "dark" id = 'darkmode' class = 'themes_button'> </div>
-    </div>
-  </div>
-</div>
-<div style="width: 95%; margin: 0 auto;" class = 'outer_border'>
 
   <section>
     <div class = 'main-container'>
@@ -42,20 +9,19 @@
         <h3 class = 'contact_message'>Thanks so much {{ name }}! I'll be in touch! Kowabunga!</h3>
       {% else %}
       <div class = 'contact_wrapper'>
-        <!-- if post request = get -->
         <div class = 'form_wrapper'>
-            <form action="{% url 'contact' %}" method="post" id= "contact-form">
+            <form action="{% url 'contact' %}" method="post" class ='contact-form dark:bg-black'>
               {% csrf_token %}
               <label>Name</label>
-              <input class = 'input-field' type="text" name="Name">
+              <input class = 'input-field dark:bg-[#74adcf] dark:border-white' type="text" name="Name">
               <label>Email</label>
-              <input class = 'input-field' type="text" name="Email">
+              <input class = 'input-field dark:bg-[#74adcf] dark:border-white' type="text" name="Email">
               <label>Message</label>
-              <textarea class = 'input-field' type="text" name="Message"></textarea>
-              <input id = "submit-button" type = "submit" value="Send">
+              <textarea class = 'input-field dark:bg-[#74adcf] dark:border-white' type="text" name="Message"></textarea>
+              <input class = "submit-button dark:text-black" type = "submit" value="Send">
             </form>
         </div>
-        <div class = contact_title><h1>Contact</h1>
+        <div class = 'contact_title'><h1>Contact</h1>
           <h4> This form is linked straight to my email 
               inbox so please feel free to leave as detailed 
               a message as you feel necessary and I will get 
@@ -76,5 +42,5 @@
   <script type = "text/javascript" src  = "{% static 'js/script.js'%}"></script>"
 </body>
 </html>
-
+{% endblock content %}
 
